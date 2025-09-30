@@ -1,0 +1,30 @@
+const Sticker = ({ text, color, position, animation }) => (
+  <div className={`absolute ${position} hidden md:block`}>
+    <div className={`px-4 py-2 rounded-full text-black font-bold text-lg shadow-md ${color} ${animation}`}>
+      {text}
+    </div>
+  </div>
+);
+
+const Hero = () => {
+  return (
+    <div className="relative h-screen min-h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.pexels.com/photos/3811867/pexels-photo-3811867.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')" }}>
+        <div className="absolute inset-0 bg-black/10"></div>
+      </div>
+      
+      <div className="relative z-10 flex flex-col items-center">
+        <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-brand-yellow" style={{ WebkitTextStroke: '4px black' }}>
+          Zaply
+        </h1>
+      </div>
+
+      <Sticker text="Apoyo" color="bg-brand-pink" position="top-1/4 left-1/4" animation="animate-float" />
+      <Sticker text="Amor" color="bg-brand-purple" position="top-1/2 left-1/4 -translate-x-1/2" animation="animate-float-delay-1" />
+      <Sticker text="Feliz" color="bg-brand-blue" position="bottom-1/4 right-1/4" animation="animate-float-delay-2" />
+      <Sticker text="Conexión" color="bg-yellow-300" position="top-1/4 right-1/4" animation="animate-float" />
+    </div>
+  );
+};
+
+export default Hero;

@@ -1,0 +1,33 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'brand-yellow': '#FFD900',
+        'brand-bg': '#F9F5F0',
+        'brand-purple': '#C4B5FD',
+        'brand-pink': '#FBCFE8',
+        'brand-blue': '#93C5FD',
+      },
+      fontFamily: {
+        'sans': ['"Inter"', 'sans-serif'],
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        }
+      },
+      animation: {
+        float: 'float 6s ease-in-out infinite',
+        'float-delay-1': 'float 7s ease-in-out infinite 1s',
+        'float-delay-2': 'float 5s ease-in-out infinite 0.5s',
+      }
+    },
+  },
+  plugins: [],
+}
